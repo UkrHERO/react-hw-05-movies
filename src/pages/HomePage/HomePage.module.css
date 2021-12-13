@@ -1,0 +1,9 @@
+.List {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.Item {
+  margin-bottom: 10px;
+  text-decoration: none;
+}
