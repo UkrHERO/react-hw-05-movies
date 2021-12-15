@@ -21,7 +21,7 @@ export default function MovieDetailsPage() {
   }, [moviesId]);
 
   const goBack = () => {
-    navigation(location?.state?.location ?? '/');
+    navigation(location?.state?.from ?? '/');
   };
 
   return (

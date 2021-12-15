@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { fetchMovies } from '../../api/api';
 import s from './MoviesPage.module.css';
 
@@ -40,12 +39,7 @@ function MoviesPage() {
         <ul className={s.List}>
           {movies.map(movie => (
             <li key={movie.id} className={s.Item}>
-              <Link
-                to={{
-                  pathname: `${movie.id}`,
-                  state: location,
-                }}
-              >
+              <Link to={`${movie.id}`} state={{ from: location.pathname }}>
                 {movie.title}
               </Link>
             </li>
@@ -55,9 +49,5 @@ function MoviesPage() {
     </>
   );
 }
-
-MoviesPage.propTypes = {
-  onSubmit: PropTypes.func,
-};
 
 export default MoviesPage;
